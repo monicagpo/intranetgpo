@@ -5858,13 +5858,16 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .close {
-  float: right;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1;
-  color: #000;
-  text-shadow: 0 1px 0 #fff;
-  opacity: .5;
+    border: none;
+    background: #BF68F5;
+    color: #f2f2f2;
+    padding: 10px;
+    margin-left: 5px;
+    font-size: 15px;
+    border-radius: 10px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
 }
 
 .close:hover {
@@ -5877,9 +5880,16 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 button.close {
-  padding: 0;
-  background-color: transparent;
-  border: 0;
+    border: none;
+    background: #BF68F5;
+    color: #f2f2f2;
+    padding: 10px;
+    margin-left: 5px;
+    font-size: 15px;
+    border-radius: 10px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
 }
 
 a.close.disabled {
@@ -5942,22 +5952,23 @@ a.close.disabled {
   overflow-x: hidden;
   overflow-y: auto;
 }
-
+/*posicion del cuadro total*/
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0px !important;
+  left: 0px !important;
   z-index: 1050;
   display: none;
   width: 100%;
   height: 100%;
   overflow: hidden;
   outline: 0;
+
 }
 
 .modal-dialog {
-  position: relative;
-  width: auto;
+  position: absolute;
+  width: 100% !important;
   margin: 0.5rem;
   pointer-events: none;
 }
@@ -6047,6 +6058,7 @@ a.close.disabled {
   -ms-flex-direction: column;
   flex-direction: column;
   width: 100%;
+  height:100%;
   pointer-events: auto;
   background-color: #fff;
   background-clip: padding-box;
@@ -6131,11 +6143,12 @@ a.close.disabled {
   height: 50px;
   overflow: scroll;
 }
-
+/*AMPLITUD DEL DIV DEL PDF*/
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 500px;
-    margin: 1.75rem auto;
+    max-width: 100%;
+    margin: revert;
+
   }
   .modal-dialog-scrollable {
     max-height: calc(100% - 3.5rem);

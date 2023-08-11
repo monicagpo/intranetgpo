@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+/*Còdigos universales de la pàgina*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;;
+}
+/*Còdigo opcional - Fondo de la pàgina*/
+body{
+	 background: url("https://travelandleisure.mx/wp-content/uploads/2018/10/marc-antoine-depelteau-268520-unsplash.jpg");
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;;
+}
+/*---*/
+body, .modal{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.modal{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.5);
+	transition: all 500ms ease;
+	opacity: 0;
+	visibility: hidden;
+}
+#btn-modal:checked ~ .modal{
+	opacity: 1;
+	visibility: visible;
+} 
+.contenedor{
+	width: 400px;
+	height: 300px;
+	margin: auto;
+	background: #fff;
+	box-shadow: 1px 7px 25px rgba(0,0,0,0.6);
+	transition: all 500ms ease;
+	position: relative;
+	transform: translateY(-30%);
+}
+#btn-modal:checked ~ .modal .contenedor{
+	transform: translateY(0%);
+} 
+.contenedor header{
+	padding: 10px;
+	background: #db8046;
+	color: #fff;
+}
+.contenedor label{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #fff;
+	font-size: 15px;
+	cursor: pointer;
+}
+.contenido{
+	width: 100%;
+	padding: 10px; 
+}
+.contenido h3{
+	margin-bottom: 10px;
+}
+.contenido p{
+	margin-bottom: 7px;
+}
+#btn-modal{
+	display: none;
+}
+.lbl-modal{
+	background: #fff;
+	padding: 10px 15px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+	.contenedor{
+		width: 95%;
+	}
+}
+
+
+/*pop up*/
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #fff;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.contenedor {
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+}
+
+	.contenedor article {
+		line-height: 28px;
+	}
+
+		.contenedor article h1 {
+			font-size: 30px;
+			text-align: left;
+			padding: 50px 0;
+		}
+
+		.contenedor article p {
+			margin-bottom: 20px;
+		}
+
+		.contenedor article .btn-abrir-popup {
+			padding: 0 20px;
+			margin-bottom: 20px;
+			height: 40px;
+			line-height: 40px;
+			border: none;
+			color: #fff;
+			background: #5E7DE3;
+			border-radius: 3px;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 16px;
+			cursor: pointer;
+			transition: .3s ease all;
+			cursor: pointer;
+		}
+
+			.contenedor article .btn-abrir-popup:hover {
+				background: rgba(94,125,227, .9);
+			}
+
+/* ------------------------- */
+.contenedor-responsivo {
+	position: relative;
+	overflow: hidden;
+	padding-top: 56.25%;
+	background-color:aliceblue;
+}
+
+
+

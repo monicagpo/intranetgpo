@@ -1,0 +1,35 @@
+
+
+
+.titulo_archivo {
+    border: 1px solid black;
+    width: 100%;
+    height: 80px;
+    background-color: #563d7c;
+    text-align: center;
+    font-size: x-large;
+    color: aliceblue;
+    font-family: 'Raleway', sans-serif;
+    
+}
+
+.frame_archivo {
+    border: 1px solid black;
+    width: 100%;
+    height: 0px;
+    float: left;
+   
+}
+.herramientas {
+    height: 25px;
+    background-color: #cecece;
+    border: 0px
+}
+.pie_archivo {
+    
+    width: 100%;
+    height: 80px;
+    margin-top: 500px;
+    text-align: center;
+    background-color: #cecece;
+}

@@ -1,150 +1,160 @@
 <!DOCTYPE html>
 <html>
-<head>
+                                               <!-- inicio HEAD-->
+   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link type="text/css" rel="shortcut icon" href="img/logo-mywebsite-urian-viera.svg"/>
-  <title>intranet</title>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="css/cargando.css">
-  <link rel="stylesheet" type="text/css" href="css/maquinawrite.css">
-  <link rel="stylesheet" href="css/estilos.css">
-  <!--tablax-->
-   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-    <!--tablax fin -->
-  <style> 
-        table tr th{
-            background:rgba(0, 0, 0, .6);
-            color: azure;
-        }
-        tbody tr{
-          font-size: 12px !important;
+    <title>intranet</title>
 
-        }
-        h3{
-            color:crimson; 
-            margin-top: 100px;
-        }
-        a:hover{
-            cursor: pointer;
-            color: #333 !important;
-        }
-      </style>
-
+                                            <!--inicio Estilos -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">      <!--Estilo BOOTSTRAP-->
+    <link rel="stylesheet" type="text/css" href="css/maquinawrite.css">    
+    <link rel="stylesheet" type="text/css" href="css/estilo_tabla.css">    <!--Estilo tabla-->
+    <link rel="stylesheet" type="text/css" href="css/style_menu.css">      <!--Estilo menu de navegación-->
+    <link rel="stylesheet" type="text/css" href="css/estilo_archivo.css">  <!--Estilo pagina del popup-->
+                                                <!--tablax-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+                                               <!--tablax fin -->
+                                               <!--fin Estilos -->
      
 
-</head>
-<body>
-  
-<div class="cargando">
-    <div class="loader-outter"></div>
-    <div class="loader-inner"></div>
-</div>
-<!--navegacion
-<nav class="navbar navbar-expand-lg navbar-light navbar-dark fixed-top" style="background-color: #563d7c !important;">
-    <ul class="navbar-nav mr-auto collapse navbar-collapse">
-      <li class="nav-item active">
-        <a href="index.php"> 
-          <img src="img/logo-mywebsite-urian-viera.svg" alt="Grupo canteras peninsulares" width="120">
-        </a>
-      </li>
-    </ul>
-    <div class="my-2 my-lg-0" id="maquinaescribir">
-      <h5 class="navbar-brand">Grupo canteras peninsulares <span>&#160;</span></h5>
-    </div>
-</nav>
-<!--navegacion-->
-<!--menu-->
- <nav class="navbar navbar-expand-lg navbar-light navbar-dark fixed-top" style="background-color: #563d7c !important";>
-            <a href="#" class="enlace">
-                <img src="img/Logo_Canteras_small.png" alt="" class="logo">
-            </a>
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <ul>
-                <li><a class="active" href="extensiones.php">Extensiones</a></li>
-                <li><a href="ma_administrativos.php">Manuales administrativos</a></li>
-                <li><a href="#">Manuales TI</a></li>
-                <li><a href="#">Procedimientos</a></li>
-                <li><a href="#">Formatos</a></li>
-				<li><a href="#">Politicas</a></li>
-				<li><a href="#">Tutoriales</a></li>
-				<li><a href="#">Sugerencias</a></li>
-            </ul>
-        </nav>
+   </head>
+                                                <!-- fin HEAD-->
 
-<!--menu fin-->
+                                                <!-- inicio BODY-->
+   <body>
+    <header class="header">
+     <div class="container">
+        <div class="header-main">
+           
+           <div class="open-nav-menu">
+              <span></span>
+           </div>
+           <div class="menu-overlay">
+           </div>
+           <!-- inicio del menu -->
+           <nav class="nav-menu navbar navbar-expand-md  fixed-top"  style="background-color: #563d7c !important;">
+           <div class="logo">
+              <img  src="img/Logo_Canteras_small.png" >
+              
+           </div>
+             <div class="close-nav-menu">
+                <img src="img/close.svg" alt="close">
+
+             </div>
+             <ul class="menu">
+             <li class="menu-item">
+                   <a href="extensiones.php">Extensiones</a>
+                </li>
+                <li class="menu-item menu-item-has-children">
+                   <a href="#" data-toggle="sub-menu">Manuales<i class="plus"></i></a>
+                   <ul class="sub-menu">
+                       <li class="menu-item"><a href="ma_administrativos.php">Manuales administrativos</a></li>
+                       <li class="menu-item"><a href="#">Manuales TI</a></li>
+                       
+                   </ul>
+                </li>
+                
+                <li class="menu-item">
+                   <a href="#">Procedimientos</a>
+                </li>
+                <li class="menu-item">
+                   <a href="#">Formatos</a>
+                </li>
+                <li class="menu-item">
+                   <a href="#">Politicas</a>
+                </li>
+                <li class="menu-item">
+                   <a href="#">Tutoriales</a>
+                </li>
+                <li class="menu-item">
+                   <a href="#">Sugerencias</a>
+                </li>
+                <li class="menu-item">
+                   <a href="#">Reglamento</a>
+                </li>
+               
+             </ul>
+           </nav>
+           <!-- fin del menu-->
+        </div>
+     </div>
+    </header>
 
 
-<div class="container mt-5 p-5">
 
-<?php
+   <div class="container mt-5 p-5">
 
-include('config.php');
+    <?php
 
-////////////////////// if para lo enviado en el where ///////////////
-$where="where tipo_documentos.id_tipo=1";
+    include('config.php');
+
+  ////////////////////// if para lo enviado en el where ///////////////
+    $where="where tipo_documentos.id_tipo=1";
 
 
 
-if (isset($_POST['buscar']))
-{
 
-	
+  if (isset($_POST['buscar']))
+
+  {
 	if (empty($_POST['xsubgrupo']))
 	{
-		$where="where nombre_documento like '".$_POST['xnombre_documento']."%' or nombre_tipo like '".$_POST['xnombre_documento']."%' or nombre_subgrupo like '".$_POST['xnombre_documento']."%'";
+		
+        $where="where (nombre_documento like '%".$_POST['xnombre_documento']."%' or nombre_tipo like '%".$_POST['xnombre_documento']."%' or nombre_subgrupo like '%".$_POST['xnombre_documento']."%' or descripcion like '%".$_POST['xnombre_documento']."%') ";
 	}
 
 	else if (empty($_POST['xnombre_documento']))
 	{
 		$where="where nombre_subgrupo='".$_POST['xsubgrupo']."'";
+        
 	}
 
-	else
+	else  
 	{
-		$where="where nombre like '".$_POST['xnombre']."%' and nombre_subgrupo='".$_POST['xsubgrupo']."' ";
+		$where="where nombre like '%".$_POST['xnombre']."%' and nombre_subgrupo='%".$_POST['xsubgrupo']."%' ";
 	}
-}
+  }
+
+
 ///////////////////////////consulta
 
-$documento  = ("SELECT id, nombre_documento,nombre_tipo,nombre_subgrupo,descripcion,ruta FROM tipo_documentos 
-			INNER JOIN documentos ON tipo_documentos.id_tipo=documentos.id_tipo 
-			INNER JOIN subgrupo_documentos ON documentos.id_subgrupo=subgrupo_documentos.id_subgrupo
-			$where ");
 
-$resSubgrupo="SELECT id,nombre_documento,nombre_tipo,nombre_subgrupo,descripcion,ruta FROM tipo_documentos 
-			INNER JOIN documentos ON tipo_documentos.id_tipo=documentos.id_tipo 
-			INNER JOIN subgrupo_documentos ON documentos.id_subgrupo=subgrupo_documentos.id_subgrupo
-			$where group by nombre_subgrupo ";
+    $documento  = ("SELECT id, nombre_documento,nombre_tipo,nombre_subgrupo,descripcion,ruta FROM tipo_documentos 
+			       INNER JOIN documentos ON tipo_documentos.id_tipo=documentos.id_tipo 
+			       INNER JOIN subgrupo_documentos ON documentos.id_subgrupo=subgrupo_documentos.id_subgrupo
+			       $where and tipo_documentos.id_tipo=1 ");
 
-$resDocumentos = mysqli_query($con, $documento);
-$resSubgrupos = mysqli_query($con, $resSubgrupo);
+    $resSubgrupo="SELECT id,nombre_documento,nombre_tipo,nombre_subgrupo,descripcion,ruta FROM tipo_documentos 
+			      INNER JOIN documentos ON tipo_documentos.id_tipo=documentos.id_tipo 
+			      INNER JOIN subgrupo_documentos ON documentos.id_subgrupo=subgrupo_documentos.id_subgrupo
+			      where tipo_documentos.id_tipo=1 group by nombre_subgrupo ";
 
-
-$cantidad     = mysqli_num_rows($resDocumentos);
-?>
-
-<br> 
-
+    $resDocumentos = mysqli_query($con, $documento);
+    $resSubgrupos = mysqli_query($con, $resSubgrupo);
+    $cantidad = mysqli_num_rows($resDocumentos);
+     ?>
+    
+     <br> 
 
 
-  <h4 class="text-center">
-    Manuales administrativos
-  </h4>
-  <hr>
 
-<div class="row text-center" style="background-color: #cecece">
+     <h4 class="text-center">
+     Manuales administrativos
+    </h4>
+  
+
+       <div class="row text-center" style="background-color: #cecece">
  
 
-  <div class="col-md-12">
-    <strong>manuales <span style="color: crimson">  ( <?php echo $cantidad; ?> )</span> </strong>
-  </div>
+        <div class="col-md-12">
+         <strong>manuales <span style="color: crimson">  ( <?php echo $cantidad; ?> )</span> </strong>
+          
+        </div>
 
-</div>
+       </div>
         <div id="busqueda">
 			<form method="post">
 				<input type="text" id="input1" placeholder="Nombre" name="xnombre_documento"/>
@@ -163,13 +173,13 @@ $cantidad     = mysqli_num_rows($resDocumentos);
 				
 				<button name="buscar" type="submit"  id="boton1" >Buscar</button>
 			</form>
-            </div>
+        </div>
 
          
 
-          <div class="col-sm-12">
-              <div class="row">
-                <div class="col-md-12 p-2">
+        <div class="col-sm-12">
+             <div class="row">
+               <div class="col-md-12 p-2">
 
 
                
@@ -183,7 +193,7 @@ $cantidad     = mysqli_num_rows($resDocumentos);
                             <th scope="col">Archivo</th>
                           </tr>
                         </thead>
-                        <tbody>
+                        
                           <?php
                               while ($registroDocumentos = mysqli_fetch_array($resDocumentos)) { ?>
                           <tr>
@@ -191,120 +201,39 @@ $cantidad     = mysqli_num_rows($resDocumentos);
                             <td><?php echo $registroDocumentos['nombre_tipo']; ?></td>
                             <td><?php echo $registroDocumentos['nombre_subgrupo']; ?></td>
                             
-                          <td> 
-                             
-                            
+                            <td> 
                               <button type="button" id="boton1" data-toggle="modal" data-target="#editChildresn<?php echo $registroDocumentos['id']; ?>">
                                   Ver
                               </button>
-                          </td>
+                            </td>
                           </tr>
-                     
-
-                          
-                            <?php  include('archivo.php'); ?>
-
-                           
-                        <?php } ?>
+                            <?php  include('archivo.php'); 
+                            ?>
+                         
+                            <?php } 
+                            ?>
                 
-                    </table>
+                  </table>
                 </div>
+             </div>
+        </div>
+         
+      
+  
+
+                                            <!-- inicio Scripts-->
+     <script src="js/jquery.min.js"></script>
+     <script src="js/popper.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/script.js"></script> <!--Script de menu de navegacion-->
+     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script><!-- DATATABLES -->
+     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script> <!-- BOOTSTRAP -->
+     <script src="js/jstablax.js"></script> <!--Script  tabla-->
+
+                                                <!--fin Scripts-->
 
 
-              </div>
-          </div>
-          </div>
-      </div>
-  </div>
-</div>
+    </body>
 
-
-
-</div>
-
-
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<!-- DATATABLES -->
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js">
-    </script>
-    <!-- BOOTSTRAP -->
-    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js">
-    </script>
-    <script>
-    ////////////////CAMBIO DE IDIOMA DataTable y DESABILITACION DE INPUT SEARCH////////////////////////////
-        $(document).ready(function () {
-            $('#tablax').DataTable({
-                 
-                language: {
-                    processing: "Tratamiento en curso...",
-                    search: "Buscar&nbsp;:",
-                    lengthMenu: "Agrupar de _MENU_ items" ,
-                    info: "Mostrando del item _START_ al _END_ de un total de _TOTAL_ items",
-                    infoEmpty: "No existen datos.",
-                    infoFiltered: "(filtrado de _MAX_ elementos en total)",
-                    infoPostFix: "",
-                    loadingRecords: "Cargando...",
-                    zeroRecords: "No se encontraron datos con tu busqueda",
-                    emptyTable: "No hay datos disponibles en la tabla.",
-                    paginate: {
-                        first: "Primero",
-                        previous: "Anterior",
-                        next: "Siguiente",
-                        last: "Ultimo"
-                    },
-                    aria: {
-                        sortAscending: ": active para ordenar la columna en orden ascendente",
-                        sortDescending: ": active para ordenar la columna en orden descendente"
-                    }
-                },
-                scrollY: 400,
-                lengthMenu: [ [10, 20, -1], [10, 20, "All"] ],
-                "searching": false,
-                
-                
-               
-            });
-        });
-    </script>
-<script type="text/javascript">
-    $(document).ready(function() {
-
-        $(window).load(function() {
-            $(".cargando").fadeOut(1000);
-        });
-
-//Ocultar mensaje
-    setTimeout(function () {
-        $("#contenMsjs").fadeOut(1000);
-    }, 3000);
-
-
-
-    $('.btnBorrar').click(function(e){
-        e.preventDefault();
-        var id = $(this).attr("id");
-
-        var dataString = 'id='+ id;
-        url = "recib_Delete.php";
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: dataString,
-                success: function(data)
-                {
-                  window.location.href="index.php";
-                  $('#respuesta').html(data);
-                }
-            });
-    return false;
-
-    });
-
-
-});
-</script>
-
-</body>
+                                                <!-- FIN BODY-->
 </html>
